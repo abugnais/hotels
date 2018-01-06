@@ -11,12 +11,4 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index(dal));
 
-// catch 404 and forward to error handler
-app.use(function(req, res, next) {
-    let err = new Error('Not Found');
-    err.status = 404;
-
-    res.send({message: 'Not Found!'});
-});
-
 module.exports = app;

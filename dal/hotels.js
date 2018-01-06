@@ -7,7 +7,6 @@ const request = function (url, params) {
         client
             .get(api_config.url)
             .query(params)
-            .set('Accept', 'application/json')
             .end(function (err, result) {
                 if (err) {
                     return reject(err);

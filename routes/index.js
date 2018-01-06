@@ -15,5 +15,12 @@ module.exports = (dal) => {
         res.send({message: 'Something Went Wrong!'});
     });
 
+    router.use(function(req, res, next) {
+        let err = new Error('Not Found');
+        err.status = 404;
+
+        res.send({message: 'Not Found!'});
+    });
+
     return router;
 };
