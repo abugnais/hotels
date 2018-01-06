@@ -1,9 +1,21 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
+const config = require("config");
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+module.exports = (dal) => {
 
-module.exports = router;
+    router.get('/', async (req, res, next) => {
+        try {
+            let hotels = await dal.hotels.search({});
+
+            res.render('index', { title: config.get("api.url"), hotels: JSON.stringify(hotels) });
+        } catch(err) {
+            err.message = "Something went wrong";
+            err.status = 500;
+
+            next(err);
+        }
+    });
+
+    return router;
+};
