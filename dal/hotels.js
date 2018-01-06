@@ -19,7 +19,9 @@ const request = function (url, params) {
 
 const hotels = {
     search: async function (params) {
+        let full_params = Object.assign(params, api_config.default_params);
         let response = await request(api_config.url, api_config.default_params);
+
         return response;
     }
 };
