@@ -6,21 +6,22 @@ const request = function (url, params) {
     return new Promise(function (resolve, reject) {
         client
             .get(api_config.url)
-            .query(api_config.default_params)
+            .query(params)
+            .set('Accept', 'application/json')
             .end(function (err, result) {
                 if (err) {
                     return reject(err);
                 }
 
-                return resolve(result);
+                return resolve(JSON.parse(result.text));
             });
-    })
+    });
 };
 
 const hotels = {
     search: async function (params) {
-        let full_params = Object.assign(params, api_config.default_params);
-        let response = await request(api_config.url, api_config.default_params);
+        let full_params = Object.assign(params, api_config.required_params);
+        let response = await request(api_config.url, full_params);
 
         return response;
     }

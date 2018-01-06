@@ -1,20 +1,18 @@
 const express = require('express');
 const router = express.Router();
-const config = require("config");
+const hotels = require('../controllers/hotels');
 
 module.exports = (dal) => {
+    const controller = hotels(dal);
 
-    router.get('/', async (req, res, next) => {
-        try {
-            let hotels = await dal.hotels.search({});
+    router.get('/search', controller.search);
 
-            res.render('index', { title: config.get("api.url"), hotels: JSON.stringify(hotels) });
-        } catch(err) {
-            err.message = "Something went wrong";
-            err.status = 500;
+    router.use(function(err, req, res, next) {
+        res.locals.message = err.message;
+        res.locals.error = req.app.get('env') === 'development' ? err : {};
 
-            next(err);
-        }
+        res.status(err.status || 500);
+        res.send({message: 'Something Went Wrong!'});
     });
 
     return router;
