@@ -52,9 +52,7 @@ describe('search controller', function (done) {
             .query(req)
             .expect(500)
             .end(function (err, res) {
-                //console.log(err);
-                //console.log(res);
-
+                should.equal("Something Went Wrong!", res.body.message);
                 done();
             });
     });
