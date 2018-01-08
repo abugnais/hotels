@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <title>Hotels Search</title>
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="./components/bootstrap/dist/css/bootstrap.min.css">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="./components/bootstrap/dist/css/bootstrap-theme.min.css">
+
+  <script src="./components/jquery/dist/jquery.min.js"></script>
+  <script src="./components/bootstrap/dist/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <form class="form-horizontal">
+    <fieldset>
+
+      <div class="row">
+        <div class="col-md-12">
+          <!-- Text input-->
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="destinationName">Destination</label>
+            <div class="col-md-4">
+              <input id="destinationName" name="destinationName" type="text" placeholder="Destination" class="form-control input-md">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="minTripStartDate">Start Date</label>
+
+            <div class="col-md-4">
+              <input id="minTripStartDate" name="minTripStartDate" type="date" placeholder="From" class="form-control input-md">
+
+              <input id="maxTripStartDate" name="maxTripStartDate" type="date" placeholder="To" class="form-control input-md">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="lengthOfStay">Length Of Stay</label>
+
+            <div class="col-md-4">
+              <input id="lengthOfStay" name="lengthOfStay" type="number" placeholder="Length Of Stay" class="form-control input-md">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="minStarRating">Star Rating</label>
+
+            <div class="col-md-4">
+              <input id="minStarRating" name="minStarRating" type="number" max="5" min="1" placeholder="From" class="form-control input-md">
+              <input id="minStarRating" name="maxStarRating" type="number" max="5" min="1" placeholder="To" class="form-control input-md">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="minTotalRating">Total Rating</label>
+
+            <div class="col-md-4">
+              <input id="minTotalRating" name="minTotalRating" type="number" max="5" min="1" placeholder="From" class="form-control input-md">
+              <input id="maxTotalRating" name="maxTotalRating" type="number" max="5" min="1" placeholder="To" class="form-control input-md">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="minGuestRating">Guest Rating</label>
+
+            <div class="col-md-4">
+              <input id="minGuestRating" name="minGuestRating" type="number" max="5" min="1" placeholder="From" class="form-control input-md">
+              <input id="maxGuestRating" name="maxGuestRating" type="number" max="5" min="1" placeholder="To" class="form-control input-md">
+            </div>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+  </form>
+</body>
+</html>
