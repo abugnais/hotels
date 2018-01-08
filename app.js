@@ -9,6 +9,6 @@ const app = express();
 app.use(logger('dev'));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', index(dal));
+app.use('/hotels', index(dal));
 
 module.exports = app;
