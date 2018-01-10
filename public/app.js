@@ -14,7 +14,7 @@ var transformer = function (hotel) {
         starRating: parseFloat(hotel.hotelInfo.hotelStarRating),
         guestRating: parseFloat(hotel.hotelInfo.hotelGuestReviewRating),
         locationUrl: 'http://maps.google.com/maps?q=' + hotel.hotelInfo.hotelLatitude + ',' + hotel.hotelInfo.hotelLongitude
-    }
+    };
 };
 
 app.controller('search', ['$scope', '$http', function ($scope, $http) {
