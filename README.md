@@ -5,6 +5,7 @@
 * nodejs@8.9.4
 * npm@5.6.0
 
+### To run the app locally
 ```bash
 
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash
@@ -22,6 +23,11 @@ cd hotels
 npm install
 
 npm start
+```
+### To run tests
+```bash
+npm install --dev
+npm test
 ```
 
 You can access the app by browsing [http://localhost:3000](http://localhost:3000)
