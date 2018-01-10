@@ -1,11 +1,9 @@
-const config = require("config");
 const client = require("superagent");
-const api_config = config.get("api");
 
 const request = function (url, params) {
     return new Promise(function (resolve, reject) {
         client
-            .get(api_config.url)
+            .get(url)
             .query(params)
             .end(function (err, result) {
                 if (err) {
@@ -17,13 +15,15 @@ const request = function (url, params) {
     });
 };
 
-const hotels = {
-    search: async function (params) {
-        let full_params = Object.assign(params, api_config.required_params);
-        let response = await request(api_config.url, full_params);
+module.exports = function (config) {
+    const api_config = config.get("api");
 
-        return response;
-    }
+    return {
+        search: async function (params) {
+            let full_params = Object.assign(params, api_config.required_params);
+            let response = await request(api_config.url, full_params);
+
+            return response;
+        }
+    };
 };
-
-module.exports = hotels;

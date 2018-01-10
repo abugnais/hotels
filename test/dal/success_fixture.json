@@ -1,0 +1,17 @@
+{
+    "offerInfo": {
+        "siteID": "1",
+        "language": "en_US",
+        "currency": "USD",
+        "userSelectedCurrency": "USD"
+    },
+    "userInfo": {
+        "persona": {
+        "personaType": "OTHERS"
+    },
+    "userId": "foo"
+    },
+    "offers": {
+        "Hotel": []
+    }
+}

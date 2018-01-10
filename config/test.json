@@ -1,0 +1,6 @@
+{
+    "api": {
+        "url": "https://fake/api.json",
+        "required_params": {"scenario": "deal-finder", "page": "foo", "uid": "foo", "productType": "Hotel"}
+    }
+}
