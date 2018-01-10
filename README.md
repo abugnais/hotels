@@ -6,17 +6,18 @@
 * npm@5.6.0
 
 ```bash
+
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash
+
+source ~/.bashrc 
+
+nvm install 8.9.4
+
+nvm install-latest-npm
+
 git clone https://github.com/abugnais/hotels.git
 
 cd hotels
-
-sudo apt-get install npm
-
-sudo npm i -g npm@5.6.0
-
-sudo npm i -g nvm
-
-sudo nvm install 8.5.0
 
 npm install
 
