@@ -5,8 +5,7 @@
   "scripts": {
     "start": "node ./bin/www",
     "test": "node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha && codecov",
-    "postinstall": "./node_modules/bower/bin/bower install",
-    "bower": "1.8.0"
+    "postinstall": "./node_modules/bower/bin/bower install"
   },
   "dependencies": {
     "body-parser": "~1.18.2",
@@ -15,7 +14,8 @@
     "express": "~4.15.5",
     "morgan": "~1.9.0",
     "serve-favicon": "~2.4.5",
-    "superagent": "^3.8.2"
+    "superagent": "^3.8.2",
+    "bower": "1.8.0"
   },
   "devDependencies": {
     "chai": "^4.1.2",
