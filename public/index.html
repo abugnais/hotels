@@ -13,8 +13,8 @@
   <script src="./components/angular/angular.min.js"></script>
   <script src="./app.js"></script>
 </head>
-<body>
-  <form class="form-horizontal" id="search-form" method="get" ng-controller="search" ng-submit="submit()">
+<body ng-controller="search">
+  <form class="form-horizontal" id="search-form" method="get" ng-submit="submit()">
     <fieldset>
 
       <div class="row">
@@ -83,8 +83,17 @@
     </fieldset>
   </form>
 
-  <div ng-controller="search" id="results">
-    {{ hotels }}
+  <div class="col-md-12">
+    <div class="row" style="text-align: center;">
+      <div class="card" ng-repeat="hotel in hotels">
+        <img class="card-img-top" src="{{hotel.imageUrl}}" alt="Card image cap">
+        <div class="card-block">
+          <h4 class="card-title">{{hotel.name}}</h4>
+          <p class="card-text">{{hotel.address}}</p>
+          <a href="{{hotel.url}}" class="btn btn-primary" target="_blank">View Result</a>
+        </div>
+      </div>
+    </div>
   </div>
 </body>
 </html>
