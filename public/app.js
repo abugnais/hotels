@@ -13,7 +13,8 @@ var transformer = function (hotel) {
         coordinates: [hotel.hotelInfo.hotelLatitude, hotel.hotelInfo.hotelLongitude],
         starRating: parseFloat(hotel.hotelInfo.hotelStarRating),
         guestRating: parseFloat(hotel.hotelInfo.hotelGuestReviewRating),
-        locationUrl: 'http://maps.google.com/maps?q=' + hotel.hotelInfo.hotelLatitude + ',' + hotel.hotelInfo.hotelLongitude
+        locationUrl: 'http://maps.google.com/maps?q=' + hotel.hotelInfo.hotelLatitude + ',' + hotel.hotelInfo.hotelLongitude,
+        averagePrice: hotel.hotelPricingInfo.averagePriceValue + " " + hotel.hotelPricingInfo.currency
     };
 };
 
