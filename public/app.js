@@ -17,14 +17,13 @@ var transformer = function (hotel) {
 };
 
 app.controller('search', ['$scope', '$http','$q', function ($scope, $http, $q) {
-    $scope.hotels = [];
-    $scope.params = {};
-
-    $scope.submit = function () {
-        $http.get('/hotels/search').then(function (result) {
+    $scope.submit = function (params) {
+        $http({
+            method: 'GET',
+            url: '/hotels/search',
+            params: params
+        }).then(function (result) {
             $scope.hotels = result.data.offers.Hotel.map(transformer);
-
-            console.log($scope.hotels);
         });
     };
 }]);

@@ -14,7 +14,7 @@
   <script src="./app.js"></script>
 </head>
 <body ng-controller="search">
-  <form class="form-horizontal" id="search-form" method="get" ng-submit="submit()">
+  <form class="form-horizontal" id="search-form" method="get" ng-submit="submit(params)">
     <fieldset>
 
       <div class="row">
@@ -23,7 +23,7 @@
           <div class="form-group">
             <label class="col-md-4 control-label" for="destinationName">Destination</label>
             <div class="col-md-4">
-              <input id="destinationName" name="destinationName" type="text" placeholder="Destination" class="form-control input-md">
+              <input id="destinationName" name="destinationName" type="text" placeholder="Destination" class="form-control input-md" ng-model="params.destinationName">
             </div>
           </div>
 
@@ -31,9 +31,9 @@
             <label class="col-md-4 control-label" for="minTripStartDate">Start Date</label>
 
             <div class="col-md-4">
-              <input id="minTripStartDate" name="minTripStartDate" data-provide="datepicker" placeholder="From" class="form-control input-md">
+              <input id="minTripStartDate" name="minTripStartDate" data-provide="datepicker" placeholder="From" class="form-control input-md" ng-model="params.minTripStartDate">
 
-              <input id="maxTripStartDate" name="maxTripStartDate" data-provide="datepicker" placeholder="To" class="form-control input-md">
+              <input id="maxTripStartDate" name="maxTripStartDate" data-provide="datepicker" placeholder="To" class="form-control input-md" ng-model="params.maxTripStartDate">
             </div>
           </div>
 
@@ -41,7 +41,7 @@
             <label class="col-md-4 control-label" for="lengthOfStay">Length Of Stay</label>
 
             <div class="col-md-4">
-              <input id="lengthOfStay" name="lengthOfStay" type="number" placeholder="Length Of Stay" class="form-control input-md">
+              <input id="lengthOfStay" name="lengthOfStay" type="number" placeholder="Length Of Stay" class="form-control input-md" ng-model="params.lengthOfStay">
             </div>
           </div>
 
@@ -49,8 +49,8 @@
             <label class="col-md-4 control-label" for="minStarRating">Star Rating</label>
 
             <div class="col-md-4">
-              <input id="minStarRating" name="minStarRating" type="number" max="5" min="1" placeholder="From" class="form-control input-md">
-              <input id="minStarRating" name="maxStarRating" type="number" max="5" min="1" placeholder="To" class="form-control input-md">
+              <input id="minStarRating" name="minStarRating" type="number" max="5" min="1" placeholder="From" class="form-control input-md" ng-model="params.minStarRating">
+              <input id="minStarRating" name="maxStarRating" type="number" max="5" min="1" placeholder="To" class="form-control input-md" ng-model="params.maxStarRating">
             </div>
           </div>
 
@@ -58,8 +58,8 @@
             <label class="col-md-4 control-label" for="minTotalRating">Total Rating</label>
 
             <div class="col-md-4">
-              <input id="minTotalRating" name="minTotalRating" type="number" max="5" min="1" placeholder="From" class="form-control input-md">
-              <input id="maxTotalRating" name="maxTotalRating" type="number" max="5" min="1" placeholder="To" class="form-control input-md">
+              <input id="minTotalRating" name="minTotalRating" type="number" max="5" min="1" placeholder="From" class="form-control input-md" ng-model="params.minTotalRating">
+              <input id="maxTotalRating" name="maxTotalRating" type="number" max="5" min="1" placeholder="To" class="form-control input-md" ng-model="params.maxTotalRating">
             </div>
           </div>
 
@@ -67,8 +67,8 @@
             <label class="col-md-4 control-label" for="minGuestRating">Guest Rating</label>
 
             <div class="col-md-4">
-              <input id="minGuestRating" name="minGuestRating" type="number" max="5" min="1" placeholder="From" class="form-control input-md">
-              <input id="maxGuestRating" name="maxGuestRating" type="number" max="5" min="1" placeholder="To" class="form-control input-md">
+              <input id="minGuestRating" name="minGuestRating" type="number" max="5" min="1" placeholder="From" class="form-control input-md" ng-model="params.minGuestRating">
+              <input id="maxGuestRating" name="maxGuestRating" type="number" max="5" min="1" placeholder="To" class="form-control input-md" ng-model="params.maxGuestRating">
             </div>
           </div>
 
@@ -88,9 +88,10 @@
       <div class="card" ng-repeat="hotel in hotels">
         <img class="card-img-top" src="{{hotel.imageUrl}}" alt="Card image cap">
         <div class="card-block">
-          <h4 class="card-title">{{hotel.name}}</h4>
+          <a href="{{hotel.url}}" target="_blank">
+            <h4 class="card-title">{{hotel.name}}</h4>
+          </a>
           <p class="card-text">{{hotel.address}}</p>
-          <a href="{{hotel.url}}" class="btn btn-primary" target="_blank">View Result</a>
         </div>
       </div>
     </div>
