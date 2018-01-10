@@ -6,6 +6,10 @@
 * npm@5.6.0
 
 ```bash
+git clone git@github.com:abugnais/hotels.git
+
+cd hotels
+
 sudo apt-get install npm
 
 sudo npm i -g npm@5.6.0
