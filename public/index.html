@@ -1,19 +1,20 @@
 <!DOCTYPE html>
-<html>
-<head lang="en">
+<html ng-app="hotels">
+<head>
   <title>Hotels Search</title>
 
-  <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="./components/bootstrap/dist/css/bootstrap.min.css">
-
-  <!-- Optional theme -->
   <link rel="stylesheet" href="./components/bootstrap/dist/css/bootstrap-theme.min.css">
+  <link rel="stylesheet" type="text/css" href="./components/bootstrap-datepicker/dist/css/bootstrap-datepicker3.min.css">
 
   <script src="./components/jquery/dist/jquery.min.js"></script>
   <script src="./components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="./components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+  <script src="./components/angular/angular.min.js"></script>
+  <script src="./app.js"></script>
 </head>
 <body>
-  <form class="form-horizontal">
+  <form class="form-horizontal" id="search-form" method="get" ng-controller="search" ng-submit="submit()">
     <fieldset>
 
       <div class="row">
@@ -30,9 +31,9 @@
             <label class="col-md-4 control-label" for="minTripStartDate">Start Date</label>
 
             <div class="col-md-4">
-              <input id="minTripStartDate" name="minTripStartDate" type="date" placeholder="From" class="form-control input-md">
+              <input id="minTripStartDate" name="minTripStartDate" data-provide="datepicker" placeholder="From" class="form-control input-md">
 
-              <input id="maxTripStartDate" name="maxTripStartDate" type="date" placeholder="To" class="form-control input-md">
+              <input id="maxTripStartDate" name="maxTripStartDate" data-provide="datepicker" placeholder="To" class="form-control input-md">
             </div>
           </div>
 
@@ -70,9 +71,20 @@
               <input id="maxGuestRating" name="maxGuestRating" type="number" max="5" min="1" placeholder="To" class="form-control input-md">
             </div>
           </div>
+
+          <div class="form-group">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+              <input type="submit" name="search" value="Search" class="btn btn-info" />
+            </div>
+          </div>
         </div>
       </div>
     </fieldset>
   </form>
+
+  <div ng-controller="search" id="results">
+    {{ hotels }}
+  </div>
 </body>
 </html>
