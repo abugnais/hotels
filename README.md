@@ -19,6 +19,7 @@ npm install
 npm start
 ```
 
-And you can access the app by browsing [http://localhost:3000](http://localhost:3000)
+You can access the app by browsing [http://localhost:3000](http://localhost:3000)
 
+Access the app on [heroku](https://guarded-temple-66581.herokuapp.com)
 
