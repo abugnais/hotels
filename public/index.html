@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="./components/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="./components/bootstrap/dist/css/bootstrap-theme.min.css">
   <link rel="stylesheet" type="text/css" href="./components/bootstrap-datepicker/dist/css/bootstrap-datepicker3.min.css">
+  <link rel="stylesheet" href="./components/font-awesome/css/font-awesome.min.css">
 
   <script src="./components/jquery/dist/jquery.min.js"></script>
   <script src="./components/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -83,18 +84,32 @@
     </fieldset>
   </form>
 
-  <div class="col-md-12">
-    <div class="row" style="text-align: center;">
-      <div class="card" ng-repeat="hotel in hotels">
+  <div class="container">
+    <div class="row grid">
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 card grid-item" ng-repeat="hotel in hotels">
         <img class="card-img-top" src="{{hotel.imageUrl}}" alt="Card image cap">
         <div class="card-block">
           <a href="{{hotel.url}}" target="_blank">
             <h4 class="card-title">{{hotel.name}}</h4>
           </a>
-          <p class="card-text">{{hotel.address}}</p>
+          <p class="card-text">
+            <a href="{{hotel.locationUrl}}" target="_blank">
+              {{hotel.address}}<i class="fa fa-location-arrow" aria-hidden="true"></i>
+            </a>
+          </p>
+          <p class="card-text">
+            <span>Star Rating: {{hotel.starRating}}</span>
+            <span>Guest Rating: {{hotel.guestRating}}</span>
+          </p>
+
+          <p class="card-text">
+            <span>Start Date: {{hotel.startDate}}</span>
+            <span>End Date: {{hotel.endDate}}</span>
+          </p>
         </div>
       </div>
     </div>
   </div>
+
 </body>
 </html>

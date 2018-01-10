@@ -11,8 +11,9 @@ var transformer = function (hotel) {
         startDate: hotel.offerDateRange.travelStartDate.join("-"),
         endDate: hotel.offerDateRange.travelEndDate.join("-"),
         coordinates: [hotel.hotelInfo.hotelLatitude, hotel.hotelInfo.hotelLongitude],
-        startRating: hotel.hotelInfo.hotelStarRating,
-        guestRating: hotel.hotelInfo.hotelGuestReviewRating
+        starRating: parseFloat(hotel.hotelInfo.hotelStarRating),
+        guestRating: parseFloat(hotel.hotelInfo.hotelGuestReviewRating),
+        locationUrl: 'http://maps.google.com/maps?q=' + hotel.hotelInfo.hotelLatitude + ',' + hotel.hotelInfo.hotelLongitude
     }
 };
 

@@ -18,6 +18,7 @@
   "dependencies": {
     "bootstrap-datepicker": "^1.7.1",
     "bootstrap": "^3.3.7",
-    "angular": "^1.6.8"
+    "angular": "^1.6.8",
+    "font-awesome": "^4.7.0"
   }
 }
