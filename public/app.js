@@ -17,7 +17,7 @@ var transformer = function (hotel) {
     }
 };
 
-app.controller('search', ['$scope', '$http','$q', function ($scope, $http, $q) {
+app.controller('search', ['$scope', '$http', function ($scope, $http) {
     $scope.submit = function (params) {
         $http({
             method: 'GET',
