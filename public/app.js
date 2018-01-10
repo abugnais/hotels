@@ -18,13 +18,20 @@ var transformer = function (hotel) {
 };
 
 app.controller('search', ['$scope', '$http', function ($scope, $http) {
+    $scope.hotels = null;
+    $scope.error = null;
+
     $scope.submit = function (params) {
         $http({
             method: 'GET',
             url: '/hotels/search',
             params: params
         }).then(function (result) {
-            $scope.hotels = result.data.offers.Hotel.map(transformer);
+            $scope.hotels = result.data.offers.Hotel ? result.data.offers.Hotel.map(transformer) : [];
+            $scope.error = null;
+        }, function (error) {
+            $scope.error = error;
+            $scope.hotels = null;
         });
     };
 }]);

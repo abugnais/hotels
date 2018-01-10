@@ -108,6 +108,18 @@
           </p>
         </div>
       </div>
+
+      <div id="empty-result-message" ng-if="hotels != null && hotels.length == 0">
+        <div class="alert alert-warning">
+          No results matched your query.
+        </div>
+      </div>
+
+      <div id="empty-result-message" ng-if="error != null">
+        <div class="alert alert-danger">
+          Something went wrong.
+        </div>
+      </div>
     </div>
   </div>
 
