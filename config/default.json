@@ -1,0 +1,6 @@
+{
+    "api": {
+        "url": "https://offersvc.expedia.com/offers/v2/getOffers",
+        "required_params": {"scenario": "deal-finder", "page": "foo", "uid": "foo", "productType": "Hotel"}
+    }
+}
