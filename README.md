@@ -6,7 +6,7 @@
 * npm@5.6.0
 
 ```bash
-git clone git@github.com:abugnais/hotels.git
+git clone https://github.com/abugnais/hotels.git
 
 cd hotels
 
