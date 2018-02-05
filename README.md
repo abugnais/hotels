@@ -1,6 +1,6 @@
 # hotels
 [![Build Status](https://travis-ci.org/abugnais/hotels.svg?branch=master)](https://travis-ci.org/abugnais/hotels)
-[![Deployment Status](https://heroku-badge.herokuapp.com/?app=guarded-temple-66581)](https://heroku-badge.herokuapp.com/?app=guarded-temple-66581)
+[![Deployment Status](https://heroku-badge.herokuapp.com/?app=guarded-temple-66581)](https://guarded-temple-66581.herokuapp.com)
 
 ## Built with
 * nodejs@8.9.4
